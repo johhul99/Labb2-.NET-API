@@ -8,9 +8,9 @@ namespace Labb2_.NET_API.Data
     {
         private IMongoDatabase db;
 
-        public CRUD(string database)
+        public CRUD(string database, IConfiguration configuration )
         {
-            var client = new MongoClient();
+            var client = new MongoClient(configuration.GetConnectionString("MongoDb"));
             db = client.GetDatabase(database);
         }
 
