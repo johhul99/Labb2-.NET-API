@@ -10,7 +10,7 @@ namespace Labb2_.NET_API.Data
 
         public CRUD(string database, IConfiguration configuration )
         {
-            var client = new MongoClient(configuration.GetConnectionString("MongoDb"));
+            var client = new MongoClient(configuration.GetConnectionString("DefaultConnection"));
             db = client.GetDatabase(database);
         }
 
